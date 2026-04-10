@@ -1,0 +1,17 @@
+Protein,Residue,Region_Index,Global_Index,Attention_Score
+Protein B,T,8,273,0.6726449
+Protein B,P,10,275,0.4036594
+Protein B,P,27,292,0.22214064
+Protein B,K,29,294,0.24345425
+Protein B,H,31,296,0.20954536
+Protein B,L,32,297,0.1618581
+Protein B,T,41,306,0.19006358
+Protein B,L,42,307,0.1631551
+Protein B,P,59,324,0.22845599
+Protein B,K,78,343,0.23479393
+Protein B,P,174,439,0.1696613
+Protein B,T,265,530,0.6239824
+Protein B,L,271,536,0.15500662
+Protein B,Y,279,544,0.16641894
+Protein B,P,282,547,0.19541314
+Protein B,P,286,551,0.16378134

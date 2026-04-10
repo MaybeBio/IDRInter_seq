@@ -1,0 +1,4 @@
+Checkpoint: /mnt/sdb/zht/2026_2_4_dnn/IDRInter/logs/IDRinter_seq_test2/20260204_202639/checkpoints/epoch=14-val_loss=0.5323-val_f1=0.6804.ckpt
+Total Samples: 139
+Accuracy: 0.7266
+AUROC: 0.8289

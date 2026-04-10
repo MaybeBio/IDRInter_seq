@@ -1,14 +1,17 @@
 # Config for Sequence Model Training
+
+# Config for Sequence Model Training
 seed: 2026
 
 data:
-  path: "/data2/IDRInter/data/raw/DIBS/idr_ppi_human.pkl"
+  # path: "/mnt/sdb/zht/2026_2_4_dnn/IDRInter/data/raw/DIBS/idr_ppi_human.pkl"
+  path: "/mnt/sdb/zht/2026_2_4_dnn/IDRInter/data/raw/DIBS/idr_ppi_human_cleaned_1500.pkl"
   train_ratio: 0.8  
 
 model:
   esm_path: null # Set to local path if available, else null to download
   layers: 2
-  heads: 8
+  heads: 8 # for decoder 
   embed_dim: 1280 # MUST match ESM model (650M=1280)
   dropout: 0.1
 
@@ -18,8 +21,10 @@ training:
   lr: 1e-4
   patience: 10
   num_workers: 10
-  precision: "16" # "16" or "32"
+  precision: "16-mixed" # "16" or "32"
+  accumulate_grad_batches: 2  # 之前设置batch_size=16, 现在改为8, 所以累积2个batch / 即将物理batch减小到8, 然后累计2词梯度再更新参数, 这样显存占用是batch=8的水平, 但训练效果等效于batch=16的效果
+  # 对应在/src/IDRinter_seq/main.py中L.Trainer的参数设置为accumulate_grad_batches=2
 
 logging:
-  save_dir: "/data2/IDRInter/logs/"
-  name: "IDRinter_seq_test1"
+  save_dir: "/mnt/sdb/zht/2026_2_4_dnn/IDRInter/logs/"
+  name: "IDRinter_seq_test3"

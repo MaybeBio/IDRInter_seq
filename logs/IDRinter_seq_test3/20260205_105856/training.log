@@ -1,0 +1,8 @@
+2026-02-05 10:58:56,400 - __main__ - INFO - Log file saved to: /mnt/sdb/zht/2026_2_4_dnn/IDRInter/logs/IDRinter_seq_test3/20260205_105856/training.log
+2026-02-05 10:58:56,401 - __main__ - INFO - Initializing Trainer...
+2026-02-05 10:58:56,423 - __main__ - INFO - Starting Training...
+2026-02-05 10:58:56,603 - dataset - INFO - Loaded data from /mnt/sdb/zht/2026_2_4_dnn/IDRInter/data/raw/DIBS/idr_ppi_human_cleaned_1500.pkl, shape: (1384, 9)
+2026-02-05 10:58:56,622 - dataset - INFO - Preprocessed PPI data, total samples: 1384
+2026-02-05 10:58:56,624 - dataset - INFO - Split data into train/val/test sets: train size: (1107, 5), val size: (138, 5), test size: (139, 5)
+2026-02-05 10:58:56,626 - dataset - INFO - Setup 'fit': Train size=1107, Val size=138
+2026-02-05 12:32:25,735 - __main__ - INFO - Training Complete!
