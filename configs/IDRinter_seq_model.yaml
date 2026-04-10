@@ -1,0 +1,25 @@
+# Config for Sequence Model Training
+seed: 2026
+
+data:
+  path: "/data2/IDRInter/data/raw/DIBS/idr_ppi_human.pkl"
+  train_ratio: 0.8  
+
+model:
+  esm_path: null # Set to local path if available, else null to download
+  layers: 2
+  heads: 8
+  embed_dim: 1280 # MUST match ESM model (650M=1280)
+  dropout: 0.1
+
+training:
+  batch_size: 16 # Small batch size for testing/memory
+  epochs: 100
+  lr: 1e-4
+  patience: 10
+  num_workers: 10
+  precision: "16" # "16" or "32"
+
+logging:
+  save_dir: "/data2/IDRInter/logs/"
+  name: "IDRinter_seq_test1"

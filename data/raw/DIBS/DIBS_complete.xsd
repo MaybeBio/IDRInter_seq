@@ -1,0 +1,206 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="database">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="database_properties">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="version"/>
+              <xs:element type="xs:anyURI" name="source"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="entry" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="accession"/>
+              <xs:element name="general">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="name"/>
+                    <xs:element type="xs:string" name="pdb_id"/>
+                    <xs:element type="xs:string" name="exp_method"/>
+                    <xs:element type="xs:string" name="source_organism"/>
+                    <xs:element type="xs:string" name="disorder_status"/>
+                    <xs:element name="kd" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:float" name="value"/>
+                          <xs:element type="xs:int" name="pubmed_id"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="publication">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:int" name="pmid"/>
+                          <xs:element type="xs:string" name="authors"/>
+                          <xs:element type="xs:string" name="title"/>
+                          <xs:element type="xs:string" name="journal"/>
+                          <xs:element type="xs:short" name="year"/>
+                          <xs:element type="xs:byte" name="issue" minOccurs="0"/>
+                          <xs:element type="xs:short" name="volume" minOccurs="0"/>
+                          <xs:element type="xs:string" name="pages" minOccurs="0"/>
+                          <xs:element type="xs:string" name="abstract"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="function">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="molecular_function">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="go" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="accession"/>
+                                <xs:element type="xs:string" name="name"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="biological_process" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="go" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="accession"/>
+                                <xs:element type="xs:string" name="name"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cellular_component" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="go" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="accession"/>
+                                <xs:element type="xs:string" name="name"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="macromolecules">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="general">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="note"/>
+                          <xs:element type="xs:byte" name="nr_of_chains"/>
+                          <xs:element type="xs:string" name="domain_type"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="chain" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="id"/>
+                          <xs:element type="xs:string" name="name"/>
+                          <xs:element type="xs:string" name="type"/>
+                          <xs:element type="xs:string" name="source_organism"/>
+                          <xs:element type="xs:string" name="sequence"/>
+                          <xs:element name="modified_residues" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="modres" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:short" name="pdb_position"/>
+                                      <xs:element type="xs:short" name="uniprot_position"/>
+                                      <xs:element type="xs:string" name="aminoacid"/>
+                                      <xs:element type="xs:string" name="definition"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:short" name="length"/>
+                          <xs:element name="uniprot">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="id"/>
+                                <xs:element type="xs:short" name="start"/>
+                                <xs:element type="xs:short" name="end"/>
+                                <xs:element type="xs:string" name="coverage"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uniref90">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="id"/>
+                                <xs:element type="xs:short" name="start"/>
+                                <xs:element type="xs:short" name="end"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="regions">
+                            <xs:complexType mixed="true">
+                              <xs:sequence>
+                                <xs:element name="region" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="region_type"/>
+                                      <xs:element type="xs:string" name="region_id" minOccurs="0"/>
+                                      <xs:element type="xs:string" name="region_name"/>
+                                      <xs:element type="xs:short" name="region_start"/>
+                                      <xs:element type="xs:short" name="region_end"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="evidence">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="chain_evidence" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="chain_id"/>
+                          <xs:element type="xs:string" name="support"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="related_structures" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="pdb_id"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
